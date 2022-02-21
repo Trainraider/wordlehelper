@@ -16,6 +16,7 @@ curl https://raw.githubusercontent.com/Trainraider/wordlehelper/main/install.sh 
 ```
 
 ### Linux
+* Make sure you have python3, pip3, curl and git
 * run:
 
 ```
