@@ -9,11 +9,13 @@ You'll probably have enough information to complete the wordle after guessing "c
 ### Android
 
 * Install and open Termux from the fdroid app store
-* run 
+* run
+
     curl https://raw.githubusercontent.com/Trainraider/wordlehelper/main/install.sh | sh
 
 ## Linux
 * run
+
     curl https://raw.githubusercontent.com/Trainraider/wordlehelper/main/install.sh | sudo sh
 
 ## Usage
