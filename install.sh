@@ -16,7 +16,7 @@ cd $TMP
 git clone --depth=1 --single-branch https://github.com/Trainraider/wordlehelper.git
 cd wordlehelper
 
-install -D wordle.py $DEST
+install -D wordlehelper $DEST
 
 cd ..
 rm -r wordlehelper
