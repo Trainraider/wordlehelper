@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import nltk
 from nltk.corpus import words
 from nltk.corpus import brown
