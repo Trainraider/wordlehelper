@@ -15,7 +15,7 @@ You'll probably have enough information to complete the wordle after guessing "c
 curl https://raw.githubusercontent.com/Trainraider/wordlehelper/main/install.sh | sh
 ```
 
-## Linux
+### Linux
 * run:
 
 ```
