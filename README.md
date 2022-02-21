@@ -9,9 +9,9 @@ You'll probably have enough information to complete the wordle after guessing "c
 * pkg install python
 * pip install nltk
 * python
-* >>> import nltk
-* >>> nltk.download('brown')
-* >>> nltk.download('words')
+* \>\>\> import nltk
+* \>\>\> nltk.download('brown')
+* \>\>\> nltk.download('words')
 * press CTRL+d
 * git clone this repository
 * cd wordlehelper
