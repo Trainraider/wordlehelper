@@ -5,7 +5,7 @@ then
 	yes | pkg install git
 	TMP="/data/data/com.termux/files/home/tmp"
 	mkdir $TMP
-	DEST="/data/data/com.termux/files/usr"
+	DEST="/data/data/com.termux/files/usr/bin"
 else
 	TMP="/tmp"
 	DEST="/usr/bin"
@@ -21,10 +21,10 @@ cd wordlehelper
 install -D wordlehelper $DEST
 
 cd ..
-rm -r wordlehelper
+yes | rm -r wordlehelper
 
 if command -v termux-setup-storage
 then
-	rm -r $TMP
+	yes | rm -r $TMP
 fi
 
