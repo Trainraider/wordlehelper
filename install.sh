@@ -2,7 +2,9 @@
 if command -v termux-setup-storage
 then
 	yes | pkg install python
+	yes | pkg install git
 	TMP="/data/data/com.termux/files/home/tmp"
+	mkdir $TMP
 	DEST="/data/data/com.termux/files/usr"
 else
 	TMP="/tmp"
