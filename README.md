@@ -2,7 +2,7 @@
 
 A basic TUI to assist with the game wordle and its clones. Enter your guess words and the colors of each letter, and this program will tell you the top 15 most common possible words as well as how many possible words exist, so you know how narrowed down you are. These suggestions are not optimal suggestions for gathering information and only become optimal once sufficient information has already been gathered.
 
-You'll probably have enough information to complete the wordle after guessing "crane, pivot, musky"
+You'll probably have enough information to complete the wordle after guessing "crane, pivot, musky". "audio, stern" is also good.
 
 ## Installation
 
