@@ -1,23 +1,29 @@
 #!/usr/bin/env python3
 
-import nltk
-from nltk.corpus import words
-from nltk.corpus import brown
 from os.path import exists
+from pathlib import Path
 
 print("CTRL+d : Restart")
 print("CTRL+c enter: Quit")
+
+home = Path.home()
+wordlist = str(Path.joinpath(home, ".wordlist"))
+
 while True:
-    if exists('.wordlist'):
-        with open('.wordlist', 'r') as f:
+    if exists(wordlist):
+        with open(wordlist, 'r') as f:
             w = f.read().splitlines()
     else:
         print("Generating word list... Hold on.")
+        #These imports are big, so I don't include them by default.
+        import nltk
+        from nltk.corpus import words
+        from nltk.corpus import brown
         freqs = nltk.FreqDist([w.lower() for w in brown.words()])
         w = [x for x in set(words.words()) if len(x)==5 if x.lower()==x if "'" not in x]
         w = sorted(w, key=lambda x: freqs[x.lower()], reverse=True)
-        w = w[0:4*len(w)//8]
-        with open('.wordlist', 'w') as f:
+        # w = w[0:4*len(w)//8]
+        with open(wordlist, 'w') as f:
             for i in w:
                 f.write("%s\n" % i)
 
@@ -32,8 +38,8 @@ while True:
             for i, l in enumerate(guess):
                 print("What color is ", l, " ?")
                 c = 'x'
-                while c not in "Gyg":
-                    c = input("<G/y/g> Green/Yellow/gray\n")
+                while c not in ['G','y','g']:
+                    c = input("<G/y/g> Green/yellow/gray\n")
                     if c == 'G':
                         w = [x for x in w if x[i]==l]
                     if c == 'y':
@@ -48,5 +54,5 @@ while True:
         except EOFError:    
             break
         except KeyboardInterrupt:
-            print("Goodbye!")
+            print("\nGoodbye!")
             exit()
