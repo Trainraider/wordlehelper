@@ -43,13 +43,7 @@ while True:
                 while c not in ['G','y','g']:
                     c = input("<G/y/g> Green/yellow/gray\n")
                     colors.append(c)
-                    lettercount.append(guess.count(l))
-                    # if c == 'G':
-                    #    w = [x for x in w if x[i]==l]
-                    #if c == 'y':
-                    #    w = [x for x in w if l in x if x[i]!=l]
-                    #if c == 'g':
-                    #    w = [x for x in w if l not in x]
+                    lettercount.append(guess.count(l))  
             for i, l in enumerate(guess):
                 if lettercount[i] > 1 and colors[i] == 'g':
                         for ii, ll in enumerate(guess):
