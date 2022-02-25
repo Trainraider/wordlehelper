@@ -35,17 +35,37 @@ while True:
                 guess = input("guess word:\n")
                 if len(guess) !=5:
                     print("Guess must be 5 letters!")
+            colors = []
+            lettercount = []
             for i, l in enumerate(guess):
                 print("What color is ", l, " ?")
                 c = 'x'
                 while c not in ['G','y','g']:
                     c = input("<G/y/g> Green/yellow/gray\n")
-                    if c == 'G':
-                        w = [x for x in w if x[i]==l]
-                    if c == 'y':
-                        w = [x for x in w if l in x if x[i]!=l]
-                    if c == 'g':
-                        w = [x for x in w if l not in x]
+                    colors.append(c)
+                    lettercount.append(guess.count(l))
+                    # if c == 'G':
+                    #    w = [x for x in w if x[i]==l]
+                    #if c == 'y':
+                    #    w = [x for x in w if l in x if x[i]!=l]
+                    #if c == 'g':
+                    #    w = [x for x in w if l not in x]
+            for i, l in enumerate(guess):
+                if lettercount[i] > 1 and colors[i] == 'g':
+                        for ii, ll in enumerate(guess):
+                            if ll == l and ll != 'g':
+                                colors[i] = 'y'
+            for i, l in enumerate(guess):
+                c = colors[i]
+                if c == 'G':
+                    w = [x for x in w if x[i]==l]
+                if c == 'y':
+                    w = [x for x in w if l in x if x[i]!=l]
+                if c == 'g':
+                    w = [x for x in w if l not in x] 
+
+
+
             for x in range(15):
                 if x < len(w):
                     print(w[x])
